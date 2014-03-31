@@ -57,12 +57,10 @@ src_prepare() {
 	einfo "preparing logging targets"
 	mkdir -p var/log/pms
 	keepdir var/log/pms
-	fowners plex:plex /var/log/pms
 
 	einfo "prepare default library destination"
 	# also make sure the default library folder is pre created with correct permissions
 	mkdir -p var/lib/plexmediaserver
-	fowners plex:plex var/lib/plexmediaserver
 	keepdir var/lib/plexmediaserver
 
 	# Fix some QA warnings
@@ -72,6 +70,8 @@ src_prepare() {
 
 src_install() {
 	cp -a * "${D}"
+	chown plex:plex "${D}/var/log/pms"
+	chown plex:plex "${D}/var/lib/plexmediaserver"
 }
 
 pkg_preinst() {
