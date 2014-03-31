@@ -16,7 +16,7 @@ SRC_URI="x86? ( ${URI_PRE}i386.deb )
 SLOT="0"
 LICENSE="PMS-License"
 IUSE=""
-RESTRICT="mirror strip"
+RESTRICT="mirror bindist strip"
 
 RDEPEND="net-dns/avahi"
 DEPEND="${RDEPEND}"
