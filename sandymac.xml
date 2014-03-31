@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<repositories version="1.0">
+ <repo priority="50" quality="experimental" status="unofficial">
+  <name>sandymac</name>
+  <description>Packages sandymac has created at https://github.com/sandymac/gentoo-overlay</description>
+  <homepage>https://github.com/sandymac/gentoo-overlay</homepage>
+  <source type="git">git://github.com/sandymac/gentoo-overlay.git</source>
+ </repo>
+</repositories>
