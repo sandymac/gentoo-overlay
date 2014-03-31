@@ -16,3 +16,9 @@ layman -a sandymac
 ```
 
 If you don't have layman setup on your machine please read this: https://www.gentoo.org/proj/en/overlays/userguide.xml
+
+----------
+
+This overlay provides ebuilds for the following packages:
+
+* [Plex Media Server](https://plex.tv/downloads): Public released are "stable" (arch) and PlexPass releases are "unstable" (~arch)
