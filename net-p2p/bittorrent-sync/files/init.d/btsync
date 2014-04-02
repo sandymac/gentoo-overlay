@@ -11,10 +11,13 @@ depend() {
 start() {
 	ebegin "Starting ${NAME}"
 
+	mkdir -p /var/run/btsync
+	chown btsync /var/run/btsync
+
 	start-stop-daemon \
 	   --start \
-	   --user "${btsync_user}" \
-	   --group "${btsync_group}" \
+	   --user "${BTSYNC_USER}" \
+	   --group "${BTSYNC_GROUP}" \
 	   --nice 5 \
 	   --ionice 3 \
 	   --exec "${SYNC_BINARY}" \
@@ -28,8 +31,8 @@ stop() {
 
 	start-stop-daemon \
 	   --stop \
-	   --user "${btsync_user}" \
-	   --group "${btsync_group}" \
+	   --user "${BTSYNC_USER}" \
+	   --group "${BTSYNC_GROUP}" \
 	   --exec "${SYNC_BINARY}" \
 	   --wait 5000 \
 	   --retry SIGTERM/5 
@@ -40,8 +43,12 @@ stop() {
 reload() {
 	ebegin "Reloading ${NAME}"
 
-	start-stop-daemon --signal HUP --exec "${SYNC_BINARY}" \
-	    --pidfile "${SYNC_PIDFILE}"
+	start-stop-daemon \
+	   --signal HUP \
+	   --user "${BTSYNC_USER}" \
+	   --group "${BTSYNC_GROUP}" \
+	   --exec "${SYNC_BINARY}" \
+	   --pidfile "${SYNC_PIDFILE}"
 
 	eend $?
 }

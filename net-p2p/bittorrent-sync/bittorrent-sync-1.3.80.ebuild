@@ -32,7 +32,6 @@ pkg_setup() {
 src_install() {
 	mkdir -p ${D}/opt/${NAME} && cd ${D}/opt/${NAME}
 	mkdir -p ${D}/etc/{init.d,conf.d,${NAME}}
-	mkdir -p ${D}/var/run/${NAME} && chown btsync:btsync "${D}/var/run/${NAME}"
 
 	cp ${S}/btsync .
 	cp ${S}/LICENSE.TXT .
