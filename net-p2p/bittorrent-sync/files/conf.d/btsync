@@ -8,6 +8,6 @@ NAME="BitTorrent Sync"
 SYNC_NAME="btsync"
 SYNC_PATH="/opt/${SYNC_NAME}/"
 SYNC_BINARY="${SYNC_PATH}/${SYNC_NAME}"
-SYNC_OPTS="--nodaemon --config /etc/${SYNC_NAME}/config"
+SYNC_OPTS="--config /etc/${SYNC_NAME}/config"
 SYNC_PIDFILE="/var/run/${SYNC_NAME}.pid"
 

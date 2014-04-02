@@ -13,10 +13,11 @@ start() {
 
 	start-stop-daemon \
 	   --start \
-	   --user "${BTSYNC_USER}" \
-	   --group "${BTSYNC_GROUP}" \
+	   --user "${btsync_user}" \
+	   --group "${btsync_group}" \
+	   --nice 5 \
+	   --ionice 3 \
 	   --exec "${SYNC_BINARY}" \
-	   --pidfile "${SYNC_PIDFILE}" --background \
 	   -- ${SYNC_OPTS}
 
 	eend $?
@@ -27,8 +28,11 @@ stop() {
 
 	start-stop-daemon \
 	   --stop \
+	   --user "${btsync_user}" \
+	   --group "${btsync_group}" \
 	   --exec "${SYNC_BINARY}" \
-	   --pidfile "${SYNC_PIDFILE}"
+	   --wait 5000 \
+	   --retry SIGTERM/5 
 
 	eend $?
 }
