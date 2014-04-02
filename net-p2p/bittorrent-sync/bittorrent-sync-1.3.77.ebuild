@@ -3,6 +3,7 @@
 
 EAPI="4"
 
+inherit eutils user
 NAME="btsync"
 DESCRIPTION="Magic folder style file syncing."
 HOMEPAGE="http://www.bittorrent.com/sync"
