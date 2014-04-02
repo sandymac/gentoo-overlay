@@ -21,4 +21,5 @@ If you don't have layman setup on your machine please read this: https://www.gen
 
 This overlay provides ebuilds for the following packages:
 
-* [Plex Media Server](https://plex.tv/downloads): Public released are "stable" (arch) and PlexPass releases are "unstable" (~arch)
+* [Plex Media Server](https://plex.tv/downloads): media-tv/plex-media-server - Public released are "stable" (arch) and PlexPass releases are "unstable" (~arch)
+* [BitTorrent Sync](http://www.bittorrent.com/sync): net-p2p/bittorrent-sync
