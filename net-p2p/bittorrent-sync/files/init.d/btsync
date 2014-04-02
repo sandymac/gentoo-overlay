@@ -1,0 +1,43 @@
+#!/sbin/runscript
+# Copyright (C) 2013-2014 Jonathan Vasquez <fearedbliss@funtoo.org>
+# Copyright (C) 2014 Sandy McArthur <Sandy@McArthur.org>
+# Distributed under the terms of the Simplified BSD License.
+
+depend() {
+	need localmount net
+	after bootmisc
+}
+
+start() {
+	ebegin "Starting ${NAME}"
+
+	start-stop-daemon \
+	   --start \
+	   --user "${BTSYNC_USER}" \
+	   --group "${BTSYNC_GROUP}" \
+	   --exec "${SYNC_BINARY}" \
+	   --pidfile "${SYNC_PIDFILE}" --background \
+	   -- ${SYNC_OPTS}
+
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping ${NAME}"
+
+	start-stop-daemon \
+	   --stop \
+	   --exec "${SYNC_BINARY}" \
+	   --pidfile "${SYNC_PIDFILE}"
+
+	eend $?
+}
+
+reload() {
+	ebegin "Reloading ${NAME}"
+
+	start-stop-daemon --signal HUP --exec "${SYNC_BINARY}" \
+	    --pidfile "${SYNC_PIDFILE}"
+
+	eend $?
+}
