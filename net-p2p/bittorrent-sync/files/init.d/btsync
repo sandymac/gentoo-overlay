@@ -40,15 +40,3 @@ stop() {
 	eend $?
 }
 
-reload() {
-	ebegin "Reloading ${NAME}"
-
-	start-stop-daemon \
-	   --signal HUP \
-	   --user "${BTSYNC_USER}" \
-	   --group "${BTSYNC_GROUP}" \
-	   --exec "${SYNC_BINARY}" \
-	   --pidfile "${SYNC_PIDFILE}"
-
-	eend $?
-}
