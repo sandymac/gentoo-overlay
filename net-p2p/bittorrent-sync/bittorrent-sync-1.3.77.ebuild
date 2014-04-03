@@ -17,7 +17,7 @@ SRC_URI="
 RESTRICT="mirror strip"
 LICENSE="BitTorrent"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm ~ppc"
+KEYWORDS="amd64 x86 arm ppc"
 IUSE=""
 
 DEPEND=""
