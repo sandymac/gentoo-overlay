@@ -13,6 +13,12 @@ curl -o /etc/layman/overlays/sandymac.xml https://raw.githubusercontent.com/sand
 
 # Add my overlay to layman
 layman -a sandymac
+
+# Sync sandymac layman overlays
+layman -s sandymac
+
+# or sync all layman overlays
+layman -S
 ```
 
 If you don't have layman setup on your machine please read this: https://www.gentoo.org/proj/en/overlays/userguide.xml
