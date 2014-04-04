@@ -17,7 +17,7 @@ SRC_URI="
 RESTRICT="mirror strip"
 LICENSE="BitTorrent"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm ~ppc"
+KEYWORDS="amd64 x86 arm ppc"
 IUSE=""
 
 DEPEND=""
@@ -31,6 +31,7 @@ pkg_setup() {
 	enewgroup btsync
 	enewuser btsync -1 -1 -1 "btsync" --system
 }
+
 src_install() {
 	einfo dodir "/opt/${NAME}"
 	dodir "/opt/${NAME}"
