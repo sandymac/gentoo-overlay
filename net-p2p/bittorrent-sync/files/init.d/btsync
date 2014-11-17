@@ -11,8 +11,8 @@ depend() {
 start() {
 	ebegin "Starting ${NAME}"
 
-	mkdir -p /var/run/btsync
-	chown btsync /var/run/btsync
+	mkdir -p $(dirname ${SYNC_PIDFILE})
+	chown ${BTSYNC_USER}:${BTSYNC_GROUP} $(dirname ${SYNC_PIDFILE})
 
 	start-stop-daemon \
 	   --start \
