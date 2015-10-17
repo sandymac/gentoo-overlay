@@ -18,7 +18,7 @@ LICENSE="PMS-License"
 IUSE=""
 RESTRICT="mirror bindist strip"
 
-RDEPEND="net-dns/avahi"
+RDEPEND="net-dns/avahi ~media-libs/opencv-2.4"
 DEPEND="${RDEPEND}"
 
 QA_PREBUILT="*"
