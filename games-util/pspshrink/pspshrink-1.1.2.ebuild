@@ -15,8 +15,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug multilib gtk"
 
 
-DEPEND="amd64? ( app-emulation/emul-linux-x86-baselibs )
-	gtk? ( dev-cpp/gtkmm )"
+#DEPEND="amd64? ( app-emulation/emul-linux-x86-baselibs )
+DEPEND="gtk? ( dev-cpp/gtkmm )"
 RDEPEND="${DEPEND}"
 
 src_install() {
