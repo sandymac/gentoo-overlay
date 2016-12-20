@@ -22,9 +22,11 @@ RDEPEND=">=dev-ml/ocurl-0.5.3:=
 	>=dev-ml/extlib-1.5.1:=
 	dev-ml/yojson
 	dev-ml/xmlm
-	>=dev-ml/gapi-ocaml-0.2.5
-	dev-ml/ocamlfuse
-	dev-ml/ocaml-sqlite3"
+	>=dev-lang/ocaml-3.12.0
+	>=dev-ml/findlib-1.7.1
+	>=dev-ml/gapi-ocaml-0.2.14
+	>=dev-ml/ocamlfuse-2.7.1
+	>=dev-ml/ocaml-sqlite3-1.6.1"
 DEPEND="${RDEPEND}
 	test? ( >=dev-ml/ounit-1.1.0 )"
 DOCS=( "README.md" )
